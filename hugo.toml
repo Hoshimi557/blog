@@ -1,8 +1,8 @@
 baseURL = "http://example.org/"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "en-us"
-title = "A Hugo Site"
-copyright = "This is a customized copyright."
+title = "The Dual Dissent"
+copyright = "Creative Commons Attribution: CC BY"
 theme = "diary"
 
 # Generate sitemap in the public folder
@@ -27,11 +27,16 @@ theme = "diary"
     noClasses = true
     style = "perldoc"
     tabWidth = 4
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
-subtitle = "Themed by Diary."
+subtitle = "Tea, recursion, and sometimes,<br> signs of intelligence."
 enableGitalk = false
 enableGiscus = true
+enableLaTeX=true
+enableReadingTime=true
 
 # Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
 clarity = "abcdefghzd"

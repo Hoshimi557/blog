@@ -1,0 +1,73 @@
+<style>
+figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #333;
+}
+body.night figcaption {
+  color: #ccc;
+}
+figure[align="right"] {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1em 1.5em;
+}
+figure[align="left"] {
+  float: left;
+  max-width: 250px;
+  margin: 0 1.5em 1em 0;
+}
+
+/* Dim featured image only on post pages, not index */
+.post-head-wrapper {
+  position: relative;
+}
+
+.post-head-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Make sure text stays above the overlay */
+.post-head-wrapper * {
+  position: relative;
+  z-index: 2;
+}
+
+.banner {
+  background: #c24e4e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 0.5em 1em;
+}
+
+.banner img {
+  height: 40px;
+  width: auto;
+}
+
+.banner span {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var banner = document.createElement('div');
+  banner.className = 'banner';
+  banner.innerHTML = '<img src="/images/Black-Cat.svg" alt="Black Cat">' +
+                     '<span>Workers\' Rights Are Human Rights! Celebrating International Labour Day!</span>';
+  document.body.prepend(banner);
+});
+</script>
