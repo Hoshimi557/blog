@@ -44,8 +44,8 @@ clarity = "abcdefghzd"
 # Twitter Card and Open Graph settings
 enableOpenGraph = true
 enableTwitterCards = true
-title = "My Blog" # will set 'og:site_name'
-description = "My HomePage Description"  # will set 'og:description'
+title = "The Dual Disscent" # will set 'og:site_name'
+description = "A Blog about Random Things"  # will set 'og:description'
 
 [params.gitalk]
   owner = "user"
@@ -64,17 +64,17 @@ theme="github-light"
 
 # Please visit https://giscus.app/ to generate settings.
 [params.giscus]
-    data_repo="username/repo"
-    data_repo_id="**************************"    
-    data_category="General"
-    data_category_id="*********************"
-    data_mapping="pathname"
-    data_strict="0"
-    data_reactions_enabled="1"
-    data_emit_metadata="0"
-    data_input_position="bottom"
-    data_theme="preferred_color_scheme"
-    data_lang="en"
+    data-repo="Hoshimi557/blog"
+    data-repo-id="R_kgDOSBwFHA"
+    data-category-id="DIC_kwDOSBwFHM4C8JX4"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
     crossorigin="anonymous"
 
 
