@@ -1,3 +1,13 @@
+if (window.innerWidth <= 1020) {
+  // Skip all scroll handling on mobile
+  window.addEventListener = (function(original) {
+    return function(type, listener, options) {
+      if (type === 'scroll') return;
+      return original.call(this, type, listener, options);
+    };
+  })(window.addEventListener);
+}
+
 var debounce = function (func, wait, options) {
   let lastArgs, lastThis, maxWait, result, timerId, lastCallTime;
 
