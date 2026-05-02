@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "http://dual-dissent.pages.dev"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "en-us"
 title = "The Dual Dissent"
@@ -82,16 +82,24 @@ theme="github-light"
 [[menu.main]]
 url = "/categories"
 name = "Categories"
-weight = 2
+weight = 4
 [[menu.main]]
 url = "/tags"
 name = "Tags"
 weight = 3
 [[menu.main]]
 url = "/posts"
-name = "Archive"
+name = "Essays & Blogs"
 weight = 1
 [[menu.main]]
 url = "/index.xml"
 name = "RSS Feed"
-weight = 4
+weight = 5
+[[menu.main]]
+url = "/about"
+name = "About"
+weight = 0
+[[menu.main]]
+url = "/micro"
+name = "Micro Blogs"
+weight = 2
