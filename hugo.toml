@@ -35,8 +35,9 @@ theme = "diary"
 subtitle = "Tea, recursion, and sometimes,<br> signs of intelligence."
 enableGitalk = false
 enableGiscus = true
-enableLaTeX=true
-enableReadingTime=true
+enableLaTeX = true
+enableReadingTime = true
+disableToC = true
 
 # Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
 clarity = "abcdefghzd"
