@@ -7,7 +7,7 @@ draft: false
 # Heya!
 
 <figure style="float: right; max-width: 250px; margin: 0 0 1em 1.5em;">
-  <img src="/images/Junna_Hoshimi_Revue_Outfit.png" alt="Junna Hoshimi">
+  <img src="/images/pfp.png" alt="Profile Pic">
 </figure>
 
 I'm 星見紅楓 (Hoshimi557), a pseudonymous writer based somewhere in Canada.
