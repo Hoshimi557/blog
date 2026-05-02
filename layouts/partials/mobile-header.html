@@ -65,7 +65,7 @@
     <a href="{{ "" | absLangURL }}">
         <div class="single-column-header-title">{{.Site.Title}}</div>
         {{ with .Site.Params.subtitle }}
-        <div class="single-column-header-subtitle">{{.}}</div>
+        <div class="single-column-header-subtitle">{{. | safeHTML}}</div>
         {{ end }}
 
     </a>
