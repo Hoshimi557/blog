@@ -85,6 +85,14 @@ figure[align="left"] {
 body.night .micro-post time {
   color: #aaa;
 }
+
+/* Attempt to fix mobile elastic snapback issue.*/
+@media screen and (max-width: 1020px) {
+  .single-column-header-container {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
 </style>
 
 <script>
