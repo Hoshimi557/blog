@@ -1,12 +1,4 @@
-if (window.innerWidth <= 1020) {
-  // Skip all scroll handling on mobile
-  window.addEventListener = (function(original) {
-    return function(type, listener, options) {
-      if (type === 'scroll') return;
-      return original.call(this, type, listener, options);
-    };
-  })(window.addEventListener);
-}
+// Mobile scroll fix removed - handled in handleScroll directly
 
 var debounce = function (func, wait, options) {
   let lastArgs, lastThis, maxWait, result, timerId, lastCallTime;
@@ -179,6 +171,10 @@ var sgn = function (t, x) {
 };
 
 var handleScroll = function () {
+  // Skip scroll handling on mobile - causes elastic snapback on short pages
+  // due to layout thrashing from opacity changes
+  if (window.innerWidth <= 1020) return;
+
   //let scrollY = window.scrollY;
   let pageHeadHeight = function () {
     return document.getElementById("pageHead").offsetHeight;
@@ -187,11 +183,16 @@ var handleScroll = function () {
   let navBarHeight = function () {
     return document.getElementById("navBar").offsetHeight;
   };
+  
+  let denominator = pageHeadHeight() - navBarHeight() * 0.8;
+  // Guard against tiny/zero denominator on short pages
+  if (denominator <= 0) return;
+
   let navOpacity = sgn(
     0.0,
     Math.min(
       1,
-      Math.max(0, window.scrollY / (pageHeadHeight() - navBarHeight() * 0.8))
+      Math.max(0, window.scrollY / denominator)
     )
   );
   if (navOpacity >= 1) {
