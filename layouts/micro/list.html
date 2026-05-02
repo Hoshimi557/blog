@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+    <div class="post-list-container post-list-container-shadow">
+        <a class="a-block">
+            <div class="post-item-wrapper post-item-wrapper-no-hover">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title post-item-title-small">
+                            Micro Blogs
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{ range .Pages.ByDate.Reverse }}
+        <div class="post-item-wrapper">
+            <div class="post-item">
+                <div class="post-item-info-wrapper">
+                    <div class="post-item-meta" style="margin-bottom: 0.5em;">
+                        {{ .Date.Format "2006-01-02 15:04" }}
+                    </div>
+                    <div class="post-item-content">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+{{ end }}
