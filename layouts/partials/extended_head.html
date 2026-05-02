@@ -96,7 +96,6 @@ body.night .micro-post time {
     min-height: 100vh;
   }
 }
-
 </style>
 
 <script>
@@ -106,5 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
   banner.innerHTML = '<img src="/images/Black-Cat.svg" alt="Black Cat">' +
                      '<span>Workers\' Rights Are Human Rights! Celebrating International Labour Day!</span>';
   document.body.prepend(banner);
+});
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth <= 1020) {
+    window.onscroll = null;
+    window.removeEventListener('scroll', window.onscroll);
+  }
 });
 </script>
