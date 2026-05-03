@@ -1,4 +1,4 @@
-baseURL = "http://dual-dissent.pages.dev"
+baseURL = "https://dual-dissent.pages.dev"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "en-us"
 title = "The Dual Dissent"
