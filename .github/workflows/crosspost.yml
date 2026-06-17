@@ -1,0 +1,57 @@
+name: Crosspost
+
+# Posts new blog RSS items to Mastodon and/or Bluesky.
+# Cron-triggered (not push-triggered) so social posting times are
+# decoupled from your writing/commit times. Also runnable manually.
+#
+# Repo path for this file: .github/workflows/crosspost.yml
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours, at :17 past the hour
+  workflow_dispatch:          # adds a manual "Run workflow" button
+    inputs:
+      post_backlog:
+        description: "Post ALL existing feed items (tick once, on the first run)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write             # needed to commit the state file back
+
+jobs:
+  crosspost:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install feedparser requests
+
+      - name: Cross-post new items
+        env:
+          FEED_URLS:            ${{ secrets.FEED_URLS }}
+          MASTODON_INSTANCE:    ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN:       ${{ secrets.MASTODON_TOKEN }}
+          BLUESKY_HANDLE:       ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          POST_BACKLOG:         ${{ inputs.post_backlog }}
+        run: python scripts/crosspost.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add crosspost_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "crosspost: update state [skip ci]"
+            git push
+          else
+            echo "No state change."
+          fi
