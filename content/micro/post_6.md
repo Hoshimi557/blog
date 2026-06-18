@@ -1,0 +1,1 @@
+I don't care what the reviews say, but if you don't agree that, in 2026, you are getting sub-$15 oxtail that tastes at least reasonably good, even if not exactly to your liking, you should shut the fuck up. Like, yes, you can probably get better quality elsewhere but like, shut the fuck up and stop arguing with money. My god, the entitlement of some of the reviewers. smh.
