@@ -1,0 +1,30 @@
+{
+  "https://dual-dissent.pages.dev/about/": {
+    "bluesky": true,
+    "mastodon": true
+  },
+  "https://dual-dissent.pages.dev/micro/post_1/": {
+    "bluesky": true,
+    "mastodon": true
+  },
+  "https://dual-dissent.pages.dev/micro/post_2/": {
+    "bluesky": true,
+    "mastodon": true
+  },
+  "https://dual-dissent.pages.dev/micro/post_3/": {
+    "bluesky": true,
+    "mastodon": true
+  },
+  "https://dual-dissent.pages.dev/micro/post_4/": {
+    "bluesky": true,
+    "mastodon": true
+  },
+  "https://dual-dissent.pages.dev/micro/post_5/": {
+    "bluesky": true,
+    "mastodon": true
+  },
+  "https://dual-dissent.pages.dev/posts/apr30/": {
+    "bluesky": true,
+    "mastodon": true
+  }
+}
